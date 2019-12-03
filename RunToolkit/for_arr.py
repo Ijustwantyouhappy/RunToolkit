@@ -4,6 +4,13 @@
 # @File     : for_arr.py
 # @Software : PyCharm
 
+"""
+Notes:
+1. a = b = np.arange(10)
+    - a = a * 2  a更改，b不更改
+    - a *= 2  a和b同步更改
+"""
+
 import numpy as np
 import pandas as pd
 import math 
