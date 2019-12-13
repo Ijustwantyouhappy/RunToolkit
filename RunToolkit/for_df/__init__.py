@@ -53,7 +53,7 @@ def compare_df(df1: pd.DataFrame, df2: pd.DataFrame, delta=1e-6) -> bool:
         print("df1: {}".format(df1.dtypes))
         print("df2: {}".format(df2.dtypes))
         return False
-    if df1.columns.names != df2.index.names:
+    if df1.columns.names != df2.columns.names:
         print("different header names")
         print("df1: {}".format(df1.columns.names))
         print("df2: {}".format(df2.columns.names))
