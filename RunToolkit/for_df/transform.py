@@ -455,7 +455,8 @@ def _match_1_4(df, keys, value, dropna, with_warnings, print_codes, logger):
             # if print_codes:  # todo
             #     codes_str = "dict(Counter(zip(*{})))".format(', '.join(["df['{}']".format(k) for k in keys]))
             #     print("codes_str:", codes_str)
-            res = dict(Counter(zip(*[df[k] for k in keys])))
+            # res = dict(Counter(zip(*[df[k] for k in keys])))
+            res = df.groupby(list(keys)).size().to_dict()
     else:
         keys = [keys] if isinstance(keys, str) else list(keys)
         if with_warnings and df[value].isnull().any():
