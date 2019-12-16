@@ -5,6 +5,8 @@
 # @Software : PyCharm
 
 import os, shutil, stat
+import pandas as pd
+import pickle
 
 
 def makedirs(file_path: str) -> None:
@@ -36,3 +38,42 @@ def delete_path(file_path: str) -> None:
         print("{} deleted".format(file_path))
     else:
         print("{} doesn't exist".format(file_path))
+
+
+def read_file(file_name):
+    """
+    读取文件
+    :param file_name:
+    :param file_type:
+    :param encoding:
+    :return:
+    """
+    if not os.path.exists(file_name):
+        print("{} doesn't exist.".format(file_name))
+        return
+    file_type = file_name.split('.')[-1]
+    if file_type in {'csv', 'xlsx', 'xls'}:
+        if file_type == 'csv':
+            func = pd.read_csv
+        else:
+            func = pd.read_excel
+        #
+        try:
+            res = func(file_name)
+        except UnicodeDecodeError:
+            try:
+                res = func(file_name, encoding="gbk")
+            except:
+                print("unknown encoding. not utf-8 or gbk.")
+                return
+        except Exception as e:
+            print(e)
+            return
+    elif file_type == 'pkl':
+        with open(file_name, 'rb') as file:
+            res = pickle.load(file)
+    else:  # todo
+        res = None
+
+    return res
+
