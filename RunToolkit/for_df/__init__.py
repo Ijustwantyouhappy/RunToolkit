@@ -4,14 +4,14 @@
 # @File     : __init__.py.py
 # @Software : PyCharm
 
+"""
+Notes:
+    1. move Cube to package `df_helper`
+"""
 
-from RunToolkit.for_df.transform import Cube
 import numpy as np
 import pandas as pd
 from string import ascii_lowercase
-
-
-df2dict = Cube().df2dict
 
 
 def gen_df(row_num: int, col_num: int, lb: int=0, ub: int=100):
