@@ -107,3 +107,35 @@ def merge_by(df1: pd.DataFrame, df2: pd.DataFrame, condition):
     :return:
     """
     pass  # todo
+
+
+# def conditional_merge(df_left, df_right, start_col='start_date', end_col='end_date', date='event_date'):
+#     """
+#     Left join in conditional
+#
+#     Parameters
+#     ------------------------
+#     :param df_left: by evnet
+#     :param df_right: by day
+#     :param start_col: start_date【by event】
+#     :param end_col: end_date【by event】
+#     :param date: date【by day】
+#
+#     examples
+#     -------------------------
+#     >>> df_A = pd.DataFrame({'start_date':['2017-03-27','2017-01-10'],'end_date':['2017-04-20','2017-02-01']})
+#     >>> df_B = pd.DataFrame({'event_date':['2017-01-20','2017-01-27'],'price':[100,200]})
+#     >>> conditional_merge(df_A,df_B)
+#     """
+#     # convert to timestamp
+#     df_left[end_col] = pd.to_datetime(df_left[end_col])
+#     df_left[start_col] = pd.to_datetime(df_left[start_col])
+#     df_right[date] = pd.to_datetime(df_right[date])
+#
+#     # left join
+#     df_left = df_left.assign(key=1)
+#     df_right = df_right.assign(key=1)
+#     df_merge = pd.merge(df_left, df_right, on='key').drop('key', axis=1)
+#     df_merge = df_merge.query('{0} >= {1} and {2} <= {3}'.format(date, start_col, date, end_col))
+#     df_out = df_left.merge(df_merge, on=[start_col, end_col], how='left').fillna('').drop('key', axis=1)
+#     return df_out

@@ -78,7 +78,7 @@ def write_excel(file_name, data, engine='pyexcelerate'):
         writer.save()
         writer.close()
     elif engine == 'pd.to_csv':
-        dir_name = file_name.strip('.xlsx')
+        dir_name = file_name.replace('.xlsx', '')
         makedirs(dir_name)
         for sheet_name, df in data:
             df.to_csv(os.path.join(dir_name, sheet_name + '.csv'), index=False)
