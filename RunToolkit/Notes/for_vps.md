@@ -25,6 +25,16 @@
     /etc/init.d/shadowsocks-r status
     ```
 8. 将打印出来的ssr链接配置至本地
+
+notes: 
+- SSR启动 | 停止 | 重启 | 查看状态：
+```bash
+/etc/init.d/shadowsocks-r start | stop | restart | status
+```
+- SSR配置文件路径：
+```bash
+/etc/shadowsocks-r/config.json
+```
  
 # FAQ
 ## 服务器上能ping通youtube而本地不行
