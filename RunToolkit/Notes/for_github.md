@@ -45,3 +45,9 @@
 * 同步：
     * push: `git push -u origin master`，在Pycharm中操作的话一般commit的同时会push。
     * pull: `git pull --rebase origin master`，如果push时报错，就先从云端pull一下代码到本地。
+    
+    
+# FAQ
+
+## github网页图片加载不出来
+
