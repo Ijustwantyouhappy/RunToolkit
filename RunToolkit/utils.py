@@ -4,6 +4,10 @@
 # @File     : utils.py
 # @Software : PyCharm
 
+"""
+Notes:
+    1. recommend third-party modules: `PySnooper`, `icecream`
+"""
 
 import time
 import logging
@@ -63,8 +67,7 @@ class Timer:
     timer.total()  # block1's time + block3's time + block4's time
 
     Notes:
-        1. recommend a third-party module `PySnooper`
-        2. https://blog.csdn.net/qq_27283619/article/details/89280974 distinguish time.time() with time.perf_counter()
+        1. https://blog.csdn.net/qq_27283619/article/details/89280974 distinguish time.time() with time.perf_counter()
     """
     def __init__(self, logger_func=None):
         self.index = 0
@@ -129,8 +132,7 @@ def timer(func):
     old function results         new function results
     r1, r2, ..., rn       ->     (r1, r2, ..., rn), cost_time
     Notes:
-        1. recommend a third-party module `PySnooper`
-        2. similar to `timeit.timeit()`
+        1. similar to `timeit.timeit()`
             e.g. `timeit.timeit('f(x)', 'from __main__ import f, x', number=10)`
     :param func:
     :return:
