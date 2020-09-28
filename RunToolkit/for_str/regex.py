@@ -9,4 +9,4 @@ References:
     1. [github > learn-regex](https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md)
 """
 
-# todo 1. pre-defined regex str   2. common used functions
+# todo 1. pre-defined regex str   2. common used functions  3. re.sub examples
