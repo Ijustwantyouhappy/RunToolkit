@@ -51,10 +51,19 @@ def find_mode(l: list) -> 'item in l':
 def group_by(l: list, func, group_format: str = 'set') -> dict:
     """
 
-    :param l:
-    :param func:
-    :param group_format: 'set'/'list'
-    :return:
+    Parameters
+    ----------
+    l
+    func
+    group_format: 'set'/'list', default = 'set'
+
+    Returns
+    -------
+
+    Warnings
+    --------
+    1. 不能使用itertools.groupby函数，因为那个是把相邻的重复元素放至一起
+
     """
     if group_format == 'set':
         d = defaultdict(set)
